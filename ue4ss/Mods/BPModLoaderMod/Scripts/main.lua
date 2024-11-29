@@ -265,8 +265,8 @@ local function LoadModsManual()
     LoadMods(UEHelpers.GetWorld())
 end
 
-RegisterLoadMapPostHook(function(Engine, World)
-    LoadMods(World:get())
+RegisterHook("/Script/IntoTheRadius2.RadiusGameMode:OnLevelLoaded", function ()
+    LoadModsManual()
 end)
 
 local ExistingActor = FindFirstOf("Actor")

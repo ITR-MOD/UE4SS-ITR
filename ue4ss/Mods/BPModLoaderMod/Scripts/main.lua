@@ -286,8 +286,8 @@ RegisterBeginPlayPostHook(function(ContextParam)
     end
 end)
 
-RegisterHook("/Script/IntoTheRadius2.RadiusGameMode:OnLevelLoaded", function ()
-    LoadMods(UEHelpers.GetWorld())
+RegisterLoadMapPostHook(function(Engine, World) --patchmarker
+   LoadMods(World:get()) --patchmarker
 end)
 
 ExecuteInGameThread(function()

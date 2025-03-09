@@ -287,7 +287,7 @@ RegisterBeginPlayPostHook(function(ContextParam)
 end)
 
 RegisterLoadMapPostHook(function(Engine, World) --patchmarker
-   LoadMods(World:get()) --patchmarker
+    LoadMods(World:get()) --patchmarker
 end)
 
 ExecuteInGameThread(function()

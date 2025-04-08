@@ -1,4 +1,4 @@
-default: ITR1
+default: ITR
 
 ITR:
 	# Force LuaMods directory

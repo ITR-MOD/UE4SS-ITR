@@ -265,8 +265,13 @@ local function LoadModsManual()
     LoadMods(UEHelpers.GetWorld())
 end
 
+local hasLoadedMods = false
+
 RegisterHook("/Script/IntoTheRadius2.RadiusGameInstance:OnFinishLoadLevel", function ()
-    LoadModsManual()
+    if not hasLoadedMods then
+        LoadModsManual()
+        hasLoadedMods = true
+    end
 end)
 
 local ExistingActor = FindFirstOf("Actor")

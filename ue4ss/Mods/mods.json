@@ -1,4 +1,4 @@
-﻿[
+[
     {
         "mod_name": "CheatManagerEnablerMod",
         "mod_enabled": true
@@ -21,7 +21,7 @@
     },
     {
         "mod_name": "LineTraceMod",
-        "mod_enabled": false
+        "mod_enabled": true
     },
     {
         "mod_name": "BPML_GenericFunctions",
@@ -38,9 +38,5 @@
     {
         "mod_name": "Keybinds",
         "mod_enabled": true
-    },
-    {
-        "mod_name": "KismetDebuggerMod",
-        "mod_enabled": false
     }
 ]

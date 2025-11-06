@@ -21,7 +21,6 @@ local function CacheDefaultObject(ObjectFullName, VariableName, ForceInvalidateC
 
     DefaultObject = StaticFindObject(ObjectFullName)
     ModRef:SetSharedVariable(VariableName, DefaultObject)
-    if not DefaultObject:IsValid() then error(string.format("%s not found", ObjectFullName)) end
 
     return DefaultObject
 end
@@ -195,12 +194,12 @@ function UEHelpers.GetAllPlayers()
 end
 
 ---Returns hit actor from FHitResult.<br>
----The function handles the struct differance between UE4 and UE5
+---The function handles the struct difference between different UE versions
 ---@param HitResult FHitResult
 ---@return AActor|UObject
 function UEHelpers.GetActorFromHitResult(HitResult)
-    if not HitResult or not HitResult:IsValid() then
-        return CreateInvalidObject() ---@type AActor
+    if not HitResult then
+        return CreateInvalidObject()
     end
 
     if UnrealVersion:IsBelow(5, 0) then
